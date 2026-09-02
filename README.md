@@ -3,10 +3,11 @@
 
 ## Team Members
 > Claire Farmer
+
 > Jay Solomon
 
 ## Description
-Hobby Circles is an event promotion platform designed to connect individuals to hobby groups of similar interests. The system supports customers seeking one-time events, or  regularly scheduled club meetings. Hobby Cirles streamines the process of discovering groups and events, RSVPing, tracking past events, and leaving questions and comments all within a clean, user-centered interface. 
+Hobby Circles is an event promotion platform designed to connect individuals to hobby groups of similar interests. The system supports customers seeking one-time events, or  regularly scheduled club meetings. Hobby Circles streamlines the process of discovering groups and events, RSVPing, tracking past events, and leaving questions and comments all within a clean, user-centered interface. 
 
 ## App Functions
 1. Customer
