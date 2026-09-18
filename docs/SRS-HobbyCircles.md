@@ -129,3 +129,4 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
 ## 6. Change Management
 - Stories are living artifacts; changes are tracked via repository issues and linked pull requests.  
 - Major changes should update this SRS.
+- Changes that exceed project scope or course restraints should be discussed with the course instructor.
