@@ -10,25 +10,28 @@
 ---
 
 ## 1. Overview
-**Vision.** One or two sentences: who this is for, the core problem, and the outcome.
+**Vision.** HobbyCircles connects like minded individuals who struggle to find well-suited hobby groups on a centralized online platform. The system allows for hobby groups to advertise their events and for individuals to RSVP and comment on event posts.
 
 **Glossary** Terms used in the project
-- **Term 1:** description.
-- **Term 2:** description
+- **Groups:** hobby group organizers.
+- **Individuals:** those who are RSVPing to events. 
+- **Events:** Posts that groups are able to create to communicate information about meetings.
 
 **Primary Users / Roles.**
-- **Customer (e.g., Student/Patient/Pet Owner/etc. )** — 1 line goal statement.
-- **Provider (e.g., Teacher/Doctor/Pet Sitter/etc. )** — 1 line goal statement.
-- **SysAdmin (optional)** — 1 line goal statement.
+- **Customer/Individual** — Find groups that align with their personal hobbies
+- **Provider/Group** — Advertise their group and draw in new members. 
 
 **Scope (this semester).**
-- <capability 1>
-- <capability 2>
-- <capability 3>
+- <capability 1> Profiles for individuals and groups with interest tags
+- <capability 2> Search feature with filtering for interest tags
+- <capability 3> Groups can create/post events
+- <capability 4> Individuals/groups can comment on posts and respond to comments.
+- <capability 5> Calender of events for indivuals and groups 
 
 **Out of scope (deferred).**
-- <deferred 1>
-- <deferred 2>
+- <deferred 1> Private messaging and online video chats for groups
+- <deferred 2> Group albums to showcase photos 
+- <deferred 2> Users/groups can see their stats
 
 > This document is **requirements‑level** and solution‑neutral; design decisions (UI layouts, API endpoints, schemas) are documented separately.
 
