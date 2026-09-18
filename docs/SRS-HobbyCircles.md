@@ -58,61 +58,62 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  <observable outcome>
   ```
 
-### 2.2 Provider Stories
-- **US-20 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+### 2.2 Provider (Group) Stories
+- **US-6 — <Create group profile>**  
+  _Story:_ As a group, I want to create events so that individuals can find my group and RSVP to my events .
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <Create group profile>
+    Given <I do not have a profile>
+    When  <I provide details and submit the form>
+    Then  <my profile should be created>
+    And <my profile should be visible to customers>
   ```
 
-- **US-21 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-7 — <Publish events>**  
+  _Story:_ As a group, I want to publish events so that I can advertise my group and its events.
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <Publish events>
+    Given <I am logged in as my group>
+    When  <I add my event details>
+    Then  <the event should be saved and visible to individuals>
   ```
 
-### 2.3 SysAdmin Stories
-- **US‑30 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+  **US-8 — <Publish and reply to comments>**  
+  _Story:_ As a group, I want to publish and reply to comments so that customer questions can be answered. 
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <Publish and reply to comments>
+    Given <I am logged in as group>
+    When  <I recieve a comment or want to add additional information to an event post>
+    Then  <I should be able to submit a response or standalone comment under the event>
   ```
 
-- **US‑31 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+  **US-8 — <View events calendar>**  
+  _Story:_ As a group, I want to view my events calendar so that I can see all future events hosted by my group
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <View events calendar>
+    Given <I am logged in as group>
+    When  <I view my profile>
+    Then  <I should be able to view a calendar holding all upcoming events>
   ```
-
----
 
 ## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+- **Performance:** 95% of discovery responses should be returned in less than 2 seconds under typical load. 
+- **Availability/Reliability:** The system should be available 99.5% of the time, with planned maintenance windows communicated in advance.
+- **Security/Privacy:** The system must implement secure authentication and authorization mechanisms. All sensitive data should be encrypted in transit and at rest.
+- **Usability:** New users should be able to complete the registration process and RSVP to an event within 5 minutes without external assitance.
 
 ---
 
 ## 4. Assumptions, Constraints, and Policies
-- list any rules, policies, assumptions, etc.
-
+- Modern browsers (latest Chrome/Firefox/Edge/Safari) and stable connectivity.
+- Course timeline and campus infrastructure constraints apply.
+- Individuals and groups are expected to provide accurate profile information
+- User data must be handeled securely
+- HobbyCircles should be reasonably accessible, including keyboard navigation and screenreading capabilities
 ---
 
 ## 5. Milestones (course‑aligned)
@@ -128,3 +129,4 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
 ## 6. Change Management
 - Stories are living artifacts; changes are tracked via repository issues and linked pull requests.  
 - Major changes should update this SRS.
+- Changes that exceed project scope or course restraints should be discussed with the course instructor.
