@@ -109,8 +109,11 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
 ---
 
 ## 4. Assumptions, Constraints, and Policies
-- list any rules, policies, assumptions, etc.
-
+- Modern browsers (latest Chrome/Firefox/Edge/Safari) and stable connectivity.
+- Course timeline and campus infrastructure constraints apply.
+- Individuals and groups are expected to provide accurate profile information
+- User data must be handeled securely
+- HobbyCircles should be reasonably accessible, including keyboard navigation and screenreading capabilities
 ---
 
 ## 5. Milestones (course‑aligned)
