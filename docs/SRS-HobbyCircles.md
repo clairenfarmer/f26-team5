@@ -101,10 +101,10 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+- **Performance:** 95% of discovery responses should be returned in less than 2 seconds under typical load. 
+- **Availability/Reliability:** The system should be available 99.5% of the time, with planned maintenance windows communicated in advance.
+- **Security/Privacy:** The system must implement secure authentication and authorization mechanisms. All sensitive data should be encrypted in transit and at rest.
+- **Usability:** New users should be able to complete the registration process and RSVP to an event within 5 minutes without external assitance.
 
 ---
 
