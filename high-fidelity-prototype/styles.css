@@ -279,12 +279,6 @@ textarea:focus {
   margin-bottom: 0.75rem;
 }
 
-.group-skill {
-  color: #000000;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-}
-
 .group-bio {
   font-size: 0.85rem;
   color: var(--text-light);
