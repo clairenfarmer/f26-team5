@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/high-fidelity-prototype/styles.css">
+    <title>User Dashboard - HobbyCircles</title>
+</head>
+
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <!-- Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hobby Circles</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+
+                    <a class="nav-link active" aria-current="page" href="index.html">Features</a>
+                    <a class="nav-link" href="login.html">Login</a>
+                    <a class="nav-link" href="register.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main header -->
+    <section class="section">
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-title">Welcome, John!</div>
+            <div class="dashbaord-subtitle">Manage your active groups and RSVP'd events</div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="container">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <h1 class="card-title">3</h1>
+                            <p class="card-text">Active Groups</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <h1 class="card-title">2</h1>
+                            <p class="card-text">Upcoming Events</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <h1 class="card-title">5</h1>
+                            <p class="card-text">Interests Tagged</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        
+    </div>
+    </section>
+
+    <!-- Upcoming events -->
+    <section class="section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Crochet Club - How to for Beginners</div>
+                        <span class="event-status event-upcoming">RSVP'd</span>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Saturday, October 5th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='...'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Table Top Gaming - Magic the Gathering Tournament</div>
+                        <span class="event-status event-upcoming">RSVP'd</span>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Sunday, October 6th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 1pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> Western Game Store</div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='...'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Groups -->
+    <section class="section">
+        <div class="container">
+            <h2>Active Groups</h2>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card">
+                        <img src="/high-fidelity-prototype/customer-prototype-pages/assetsUser/crochet.jpeg" class="card-img-top" alt="crochet supplies">
+                        <div class="card-body">
+                            <h5 class="card-title">Crochet Club</h5>
+                            <p class="card-text">Share projects, get advice for all skill levels!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="/high-fidelity-prototype/customer-prototype-pages/assetsUser/games.jpg" class="card-img-top" alt="board game pieces">
+                        <div class="card-body">
+                            <h5 class="card-title">Table Top Gaming</h5>
+                            <p class="card-text">Bring your favorite board/card games to our weekly gatherings! Inquire for DND campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="/high-fidelity-prototype/customer-prototype-pages/assetsUser/crossStitch.webp" class="card-img-top" alt="cross stitching supplies">
+                        <div class="card-body">
+                            <h5 class="card-title">Cross Stitching Club</h5>
+                            <p class="card-text">Share patterns and advice ranging from beginners to experts.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>
