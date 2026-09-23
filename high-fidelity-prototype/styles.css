@@ -237,3 +237,56 @@ textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
+
+/* Group Cards */
+.group-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.group-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+.group-image {
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+}
+
+.group-info {
+  padding: 1.5rem;
+}
+
+.group-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.group-interest {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.group-skill {
+  color: #F59E0B;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.group-bio {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
