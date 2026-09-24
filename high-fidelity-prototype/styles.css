@@ -86,6 +86,7 @@
   font-weight: 600;
 }
 
+
 /* RSVP Event */
 .event-item {
   background: white;
@@ -147,6 +148,7 @@
   color: var(--text-dark);
 }
 
+
 /* Buttons */
 .btn {
   padding: 0.75rem 1.5rem;
@@ -181,6 +183,7 @@
   padding: 1rem 2rem;
   font-size: 1.1rem;
 }
+
 
 /* Grids */
 .grid {
@@ -238,6 +241,7 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
+
 /* Group Cards */
 .group-card {
   background: white;
@@ -283,4 +287,40 @@ textarea:focus {
   font-size: 0.85rem;
   color: var(--text-light);
   margin-bottom: 1rem;
+}
+
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-header {
+  background-color: var(--light-gray);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-light);
 }
