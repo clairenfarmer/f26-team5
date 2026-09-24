@@ -7,7 +7,8 @@
     <title>Login - Hobby Circles</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="../styles.css">
+      </head>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
@@ -33,77 +34,104 @@
         </div>
     </nav>
 
-    <!-- Welcome -->
+    <!-- Main header -->
+    <section class="section">
     <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-9 mt-5">
-            <div class="card shadow-sm p-4">
-                <h3 class="text-center">Welcome Back, Crochet Club!</h3>
-
-            </div>
+        <div class="dashboard-header">
+            <div class="dashboard-title">Welcome, Crochet Club!</div>
+            <div class="dashbaord-subtitle">Manage your events and view your group's details</div>
         </div>
     </div>
 
     <!-- Events -->
-    <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Weekly Meeting</h5>
-        <h6><span class="badge rounded-pill bg-light text-dark">September 24</span>
-            <span class="badge rounded-pill bg-light text-dark">6pm</span>
-            <span class="badge rounded-pill bg-light text-dark">EUC Lawn</span>
-        </h6>
-        <p class="card-text">Join Crochet Club for our weekly meeting. Bring your craft and enjoy socializing with other members!</p>
-        <button type="button" class="btn btn-warning">View more details</button>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">Show and Tell</h5>
-        <h6><span class="badge rounded-pill bg-light text-dark">September 26</span>
-            <span class="badge rounded-pill bg-light text-dark">3pm</span>
-            <span class="badge rounded-pill bg-light text-dark">Library</span>
-        </h6>
-        <p class="card-text">Show and tell your latest or favorite crochet projects to the club!</p>
-        <button type="button" class="btn btn-warning">View more details</button>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">Craft and Chat</h5>
-        <h6><span class="badge rounded-pill bg-light text-dark">September 28</span>
-            <span class="badge rounded-pill bg-light text-dark">6pm</span>
-            <span class="badge rounded-pill bg-light text-dark">Library</span>
-        </h6>
-        <p class="card-text">Invite your crafty friends to an evening of crafting and chatting. All mediums are welcome!</p>
-        <button type="button" class="btn btn-warning">View more details</button>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title text-center">Weekly Meeting</h5>
-        <h6><span class="badge rounded-pill bg-light text-dark">September 30</span>
-            <span class="badge rounded-pill bg-light text-dark">6pm</span>
-            <span class="badge rounded-pill bg-light text-dark">EUC Lawn</span>
-        </h6>
-        <p class="card-text">Join Crochet Club for our weekly meeting. Bring your craft and enjoy socializing with other members!</p>
-        <button type="button" class="btn btn-warning">View more details</button>
-      </div>
-    </div>
-  </div>
-</div>
+         <section class="section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">How to for Beginners</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Thursday, September 24th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='...'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Weekly Meeting</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Friday, September 25th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='...'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Show and Tell</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Monday, September 28th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='...'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Craft and Chat</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Wednesday, September 30th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='...'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 <!-- Calendar Link -->
  <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5 mt-5">
+        <div class="col-md-8">
             <div class="card shadow-sm p-4">
                 <a href="calendar.html" button class="btn btn-dark">View all events</a>
             </div>
