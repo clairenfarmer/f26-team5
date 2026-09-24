@@ -72,13 +72,13 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  The event is shown in my calendar
   ```
 
-- **US‑4 — Leave comments under event posts**  
-  _Story:_ As a customer, I want to leave comments under events posted by hobby groups so that I can ask questions about events.
+- **US‑4 — Leave comments under group pages**  
+  _Story:_ As a customer, I want to leave comments on hobby group profiles so that I can ask questions.
   _Acceptance:_
   ```gherkin
-  Scenario: Leave comments under event posts
+  Scenario: Leave comments under group profiles
     Given I am logged in as a user
-    When  I post a comment under an event post
+    When  I post a comment on a group profile
     Then  The comment should be saved and be visisble to groups and other users
   ```
 
