@@ -7,6 +7,7 @@
     <title>Event1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -35,63 +36,80 @@
         </div>
     </nav>
 
-    <!-- Event Details -->
-    <!-- Welcome -->
+    <!-- Main header -->
+    <section class="section">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="dashboard-title">Event Details</div>
+                <div class="dashbaord-subtitle">View details for "How to for Beginners"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 mt-5">
-                <div class="card shadow-sm p-4">
-                    <h3 class="text-center">Upcoming Events</h3>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="card-title">0</h1>
+                        <p class="card-text">Days until event</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container row justify-content-center">
-        <div class="card">
-            <h5 class="card-header">Event 1</h5>
-            <div class="card-body">
-                <p class="card-text">These are the details for event 1. These are the details for event 1. These are the details for event 1
-                </p>
-                <p>Time: <span class="badge bg-secondary">6 p.m.</span></p>
-                <p>Location: <span class="badge bg-secondary">Library</span></p>
-                <p>Host: <span class="badge bg-secondary">John Doe</span></p>
+            <div class="col">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="card-title">18</h1>
+                        <p class="card-text">RSVPs</p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="card">
-            <h5 class="card-header">Event 2</h5>
-            <div class="card-body">
-                <p class="card-text">These are the details for event 2. These are the details for event 2. These are the details for event 2
-                </p>
-                <p>Time: <span class="badge bg-secondary">6 p.m.</span></p>
-                <p>Location: <span class="badge bg-secondary">Library</span></p>
-                <p>Host: <span class="badge bg-secondary">Jane Smith</span></p>
+            <div class="col">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="card-title">$0</h1>
+                        <p class="card-text">Attendance fee</p>
+                    </div>
+                </div>
             </div>
+
         </div>
 
-        <div class="card">
-            <h5 class="card-header">Event 3</h5>
-            <div class="card-body">
-                <p class="card-text">These are the details for event 3. These are the details for event 3. These are the details for event 3
-                </p>
-                <p>Time: <span class="badge bg-secondary">6 p.m.</span></p>
-                <p>Location: <span class="badge bg-secondary">Library</span></p>
-                <p>Host: <span class="badge bg-secondary">Alice Johnson</span></p>
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 style="font-size: 1.3rem; font-weight: 700;">Additional Details</h2>
             </div>
-        </div>
+            <div class="card-content">
 
-        <div class="card">
-            <h5 class="card-header">Event 4</h5>
-            <div class="card-body">
-                <p class="card-text">These are the details for event 4. These are the details for event 4. These are the details for event 4
-                </p>
-                <p>Time: <span class="badge bg-secondary">6 p.m.</span></p>
-                <p>Location: <span class="badge bg-secondary">Library</span></p>
-                <p>Host: <span class="badge bg-secondary">Bob Brown</span></p>
+    
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <p style="font-weight: 600;">Materials</p>
+                    </div>
+                    <p style="color: #666; line-height: 1.5;">
+                        Spare yarn, hooks, and scissors
+                    </p>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <p style="font-weight: 600;">Snacks and Refreshments</p>
+                    </div>
+                    <p style="color: #666; line-height: 1.5;">
+                        No snacks or refreshments will be provided this meeting
+                    </p>
+                
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <p style="font-weight: 600;">Hosts attending</p>
+                    </div>
+                    <p style="color: #666; line-height: 1.5;">
+                        Jane Doe and Michael Williams
+                    </p>
+                    
+                </div>
+
             </div>
-        </div>
-    </div>
 </body>
 
 </html>
