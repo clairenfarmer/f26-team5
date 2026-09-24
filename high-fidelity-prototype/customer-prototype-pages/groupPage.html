@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/high-fidelity-prototype/styles.css">
+    <title>Group Profile - HobbyCircles</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+
+    <!-- Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hobby Circles</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+
+                    <a class="nav-link" href="browseGroups.html">Browse Groups</a>
+                    <a class="nav-link" href="userCalendar.html">View Calendar</a>
+                    <a class="nav-link" href="userDashboard.html">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main header -->
+    <section class="section" style="background: var(--dark-gray); color: white;">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center;">
+                <div>
+                    <img class="card-img-top" src="/high-fidelity-prototype/customer-prototype-pages/assetsUser/games.jpg" style="width: 306px; height: 204px;"/>
+                </div>
+                <div>
+                    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; color: white;" id="group-name">Table Top Gaming</h1>
+                    <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 1rem; color: white;" id="group-interest"> Games</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3" style="gap: 2rem;">
+
+          <!-- Left Column - About -->
+          <div style="grid-column: span 2;">
+
+            <!-- About -->
+            <div class="card" style="margin-bottom: 2rem;">
+              <div class="card-header">
+                <h2 style="font-size: 1.3rem; font-weight: 700;">About</h2>
+              </div>
+              <div class="card-content">
+                <p id="group -bio" style="line-height: 1.6; color: #666;">
+                  Group of table top game enthusiasts, whether it be classic cards, printed card games, board games, or table top role play games. Meetings range from casual gaming to traveling for competitions and tournaments. Long term campaigns for DnD start every few months, ask us about our next campaign if interested!
+                </p>
+              </div>
+            </div>
+
+            <!-- Comments and Questions -->
+            <div class="card">
+              <div class="card-header">
+                <h2 style="font-size: 1.3rem; font-weight: 700;">Questions and Comments</h2>
+              </div>
+              <div class="card-content">
+
+                <!-- Comment 1 -->
+                <div style="padding: 1.5rem; border-bottom: 1px solid var(--light-gray);">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <p style="font-weight: 600;">John Smith</p>
+                  </div>
+                  <p style="color: #666; line-height: 1.5;">
+                    Are there any games provided by the group?
+                  </p>
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <p style="font-weight: 600;">Table Top Gaming Group</p>
+                  </div>
+                  <p style="color: #666; line-height: 1.5;">
+                    Attendees are encouraged to bring their favorite games, but we have some classics that people can use!
+                  </p>
+                </div>
+
+                <!-- Comment 2 -->
+                <div style="padding: 1.5rem; border-bottom: 1px solid var(--light-gray);">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <p style="font-weight: 600;">Jane Doe</p>
+                  </div>
+                  <p style="color: #666; line-height: 1.5;">
+                    I'm interested in playing in a DnD campaign! Is it beginner friendly?
+                  </p>
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <p style="font-weight: 600;">Table Top Gaming Group</p>
+                  </div>
+                  <p style="color: #666; line-height: 1.5;">
+                    Yes, it's beginner friendly! Our next campaign starts in a few weeks!
+                  </p>
+                </div>
+
+                <!-- Comment 3 -->
+                <div style="padding: 1.5rem; border-bottom: 1px solid var(--light-gray);">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <p style="font-weight: 600;">Jackson Holt</p>
+                  </div>
+                  <p style="color: #666; line-height: 1.5;">
+                    I have a super fun board game, but it takes a long time to play. When would be a good time to bring it to a group meeting?
+                  </p>
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <p style="font-weight: 600;">Table Top Gaming Group</p>
+                  </div>
+                  <p style="color: #666; line-height: 1.5;">
+                    We have an event on October 10th dedicated for long form games! 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Times & Events -->
+          <div>
+
+            <!-- Meeting Times -->
+            <div class="card" style="margin-bottom: 2rem;">
+              <div class="card-header">
+                <h2 style="font-size: 1.3rem; font-weight: 700;">Typical Meeting Times</h2>
+              </div>
+              <div class="card-content">
+                <div style="margin-bottom: 1rem;">
+                  <p style="font-weight: 600; margin-bottom: 0.5rem;">Every Other Saturday</p>
+                  <p style="color: #666;">1:00 PM - 4:00 PM</p>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                  <p style="font-weight: 600; margin-bottom: 0.5rem;">DnD Campaign: Every Sunday</p>
+                  <p style="color: #666;">5:00 PM - 8:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- View Events Button -->
+            <div class="card" style="margin-bottom: 2rem;">
+              <div class="card-content">
+                <button class="btn btn-primary"
+                  style="width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: 600;" href="...">
+                  View Events
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+</body>
+
+
+
+
+</html>
