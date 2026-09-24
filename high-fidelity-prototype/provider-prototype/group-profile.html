@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hobby Circles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+
+<!-- Nav Bar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="group-profile.html">Hobby Circles</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+
+                <a class="nav-link active" aria-current="page" href="event-form.html">Create an Event</a>
+                <a class="nav-link" href="calendar.html">View Calendar</a>
+                <a class="nav-link" href="group-profile.html">View Profile</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main header -->
+<section class="section">
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="dashboard-title">Welcome, Crochet Club!</div>
+            <div class="dashbaord-subtitle">Manage your events and view your group's details</div>
+        </div>
+    </div>
+</section>
+    <!-- Events -->
+    <section class="section">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">How to for Beginners</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Thursday, September 24th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='events.html'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Weekly Meeting</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Friday, September 25th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='events.html'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Show and Tell</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Monday, September 28th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='events.html'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-header">
+                    <div>
+                        <div class="event-title">Craft and Chat</div>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="detail-item"><span class="detail-label">Date:</span> Wednesday, September 30th</div>
+                    <div class="detail-item"><span class="detail-label">Time:</span> 3pm-4pm</div>
+                    <div class="detail-item"><span class="detail-label">Location:</span> 1234 Gate St, Greensboro </div>
+                    <div class="detail-item"><span class="detail-label">Price:</span> Free</div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="window.location.href='events.html'">View Details</button>
+                    <button class="btn btn-outline" onclick="alert('Event cancelled')"
+                        style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Calendar Link -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm p-4">
+                    <a href="calendar.html" button class="btn btn-dark">View all events</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments and Questions -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 style="font-size: 1.3rem; font-weight: 700;">Questions and Comments</h2>
+            </div>
+            <div class="card-content">
+
+                <!-- Comment 1 -->
+                <div style="padding: 1.5rem; border-bottom: 1px solid var(--light-gray);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <p style="font-weight: 600;">John Smith</p>
+                    </div>
+                    <p style="color: #666; line-height: 1.5;">
+                        Are tools and yarn provided by the group?
+                    </p>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <p style="font-weight: 600;">Crochet Club</p>
+                    </div>
+                    <p style="color: #666; line-height: 1.5;">
+                        Attendees are encouraged to bring their own materials, but there are some donated resources available as well.
+                    </p>
+                </div>
+
+                <!-- Comment 2 -->
+                <div style="padding: 1.5rem; border-bottom: 1px solid var(--light-gray);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <p style="font-weight: 600;">Sarah Williams</p>
+                    </div>
+                    <p style="color: #666; line-height: 1.5;">
+                        Do I need to know how to crochet before joining?
+                    </p>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label for="question" class="form-label">Leave a response: </label>
+                            <textarea class="form-control" id="question" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </form>
+                    
+                </div>
+
+
+
+
+            </div>
+
+            <body>
+
+            </body>
+
+</html>

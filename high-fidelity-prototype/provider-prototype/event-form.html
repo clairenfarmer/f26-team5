@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <!-- Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="group-profile.html">Hobby Circles</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    
+                    <a class="nav-link active" aria-current="page" href="event-form.html">Create an Event</a>
+                    <a class="nav-link" href="calendar.html">View Calendar</a>
+                    <a class="nav-link" href="group-profile.html">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Form -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 mt-5">
+                <div class="card shadow-sm p-4">
+                    <h3 class="mb-4">Create a New Event</h3>
+                    <form action="calendar.html" method="POST">
+                        <div class="mb-3">
+                            <label for="eventName" class="form-label">Event Name *</label>
+                            <input type="text" class="form-control" id="eventName" placeholder="Enter the event name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventDate" class="form-label">Event Date *</label>
+                            <input type="date" class="form-control" id="eventDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventLocation" class="form-label">Event Location *</label>
+                            <input type="text" class="form-control" id="eventLocation" placeholder="Enter the event location"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eventDescription" class="form-label">Event Description</label>
+                            <textarea class='form-control' id='eventDescription' rows='3' placeholder='Provide a brief description of the event'></textarea>
+                        </div>
+                        <button type='submit' class='btn btn-warning'>Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
