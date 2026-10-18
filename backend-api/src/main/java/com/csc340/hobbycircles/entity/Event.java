@@ -52,6 +52,11 @@ public class Event {
     @JoinColumn(name = "hobbygroup_id", nullable = false)
     private HobbyGroup hobbygroup;
 
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "rsvp_id", nullable = false)
+    private RSVP rsvp;
+
     // constructors, getters, and setters
     public Event() {
     }
