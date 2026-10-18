@@ -125,4 +125,8 @@ public class Event {
     public void setHobbygroup(HobbyGroup hobbygroup) {
         this.hobbygroup = hobbygroup;
     }
+
+    public RSVP getRsvp() {
+        return rsvp;
+    }
 }
