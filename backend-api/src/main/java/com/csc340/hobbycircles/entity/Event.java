@@ -72,6 +72,7 @@ public class Event {
         this.interest = interest;
         this.location = location;
         this.time = time;
+        this.status = "PUBLISHED"; // default status
         this.hobbygroup = hobbygroup;
     }
 
@@ -121,6 +122,14 @@ public class Event {
 
     public void setTime(LocalDateTime time) {
         this.time = time;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public HobbyGroup getHobbygroup() {
