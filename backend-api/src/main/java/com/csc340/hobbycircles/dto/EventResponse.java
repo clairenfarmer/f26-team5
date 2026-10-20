@@ -2,7 +2,7 @@ package com.csc340.hobbycircles.dto;
 
 import com.csc340.hobbycircles.entity.Event;
 
-public record EventServiceResponse(
+public record EventResponse(
     Long id,
     String name,
     String description,
@@ -12,8 +12,8 @@ public record EventServiceResponse(
     Long hobbygroupId,
     Long rsvpId
 ) {
-    public static EventServiceResponse fromEvent(Event event) {
-        return new EventServiceResponse(
+    public static EventResponse fromEvent(Event event) {
+        return new EventResponse(
             event.getId(),
             event.getName(),
             event.getDescription(),
