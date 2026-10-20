@@ -47,6 +47,11 @@ public class Event {
     @Column(length = 50)
     private LocalDateTime time;
 
+    @NotBlank
+    @Size(max = 30)
+    @Column(nullable = false, length = 30)
+    private String status;
+
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "hobbygroup_id", nullable = false)
