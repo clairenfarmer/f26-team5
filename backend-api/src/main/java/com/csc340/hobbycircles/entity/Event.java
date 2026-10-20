@@ -47,6 +47,11 @@ public class Event {
     @Column(length = 50)
     private LocalDateTime time;
 
+    @NotBlank
+    @Size(max = 30)
+    @Column(nullable = false, length = 30)
+    private String status;
+
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "hobbygroup_id", nullable = false)
@@ -67,6 +72,7 @@ public class Event {
         this.interest = interest;
         this.location = location;
         this.time = time;
+        this.status = "PUBLISHED"; // default status
         this.hobbygroup = hobbygroup;
     }
 
@@ -116,6 +122,14 @@ public class Event {
 
     public void setTime(LocalDateTime time) {
         this.time = time;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public HobbyGroup getHobbygroup() {
