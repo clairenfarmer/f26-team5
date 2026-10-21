@@ -23,4 +23,5 @@ public interface HobbyGroupRepository extends JpaRepository<HobbyGroup, Long> {
                 and upper(event.status) = 'PUBLISHED'
     """)
     List<HobbyGroup> findMatchingCategory(@Param("category") String category);
+    List<HobbyGroup> findByHobbyGroupId(Long hobbyGroupId);
 }

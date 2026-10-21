@@ -1,7 +1,12 @@
 package com.csc340.hobbycircles.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,6 +17,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -57,10 +63,9 @@ public class Event {
     @JoinColumn(name = "hobbygroup_id", nullable = false)
     private HobbyGroup hobbygroup;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "rsvp_id", nullable = false)
-    private RSVP rsvp;
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<RSVP> rsvps = new ArrayList<>();
 
     // constructors, getters, and setters
     public Event() {
@@ -140,7 +145,11 @@ public class Event {
         this.hobbygroup = hobbygroup;
     }
 
-    public RSVP getRsvp() {
-        return rsvp;
+    public List<RSVP> getRsvps() {
+        return rsvps;
+    }
+
+    public void setRsvps(List<RSVP> rsvps) {
+        this.rsvps = rsvps;
     }
 }

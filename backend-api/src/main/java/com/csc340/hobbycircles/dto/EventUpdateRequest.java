@@ -1,5 +1,7 @@
 package com.csc340.hobbycircles.dto;
 
+import java.time.LocalDateTime;
+
 import com.csc340.hobbycircles.entity.Interest;
 
 import jakarta.validation.constraints.NotBlank;
@@ -11,8 +13,8 @@ public record EventUpdateRequest (
         @Size(max = 2000) String description,
         @NotNull Interest interest,
         @Size(max = 255) String location,
-        @NotNull String time,
+        @NotNull LocalDateTime time,
         @Size(max = 30) String status
 ) {
-    
+
 }

@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 
@@ -27,7 +26,7 @@ public class RSVP {
     @JoinColumn(name = "individual_id", nullable = false, unique = true)
     private Individual individual;
 
-    @OneToOne (mappedBy = "rsvp", fetch = FetchType.LAZY, optional = false )
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "event_id", nullable = false)
     private Event event;
 

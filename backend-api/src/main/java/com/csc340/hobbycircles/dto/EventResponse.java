@@ -10,9 +10,9 @@ public record EventResponse(
     String time,
     String status,
     Long hobbygroupId,
-    Long rsvpId
+    int rsvpCount
 ) {
-    public static EventResponse fromEvent(Event event) {
+    public static EventResponse from(Event event) {
         return new EventResponse(
             event.getId(),
             event.getName(),
@@ -21,7 +21,7 @@ public record EventResponse(
             event.getTime().toString(),
             event.getStatus(),
             event.getHobbygroup().getId(),
-            event.getRsvp().getId()
+            event.getRsvps() == null ? 0 : event.getRsvps().size()
         );
     }
 }
