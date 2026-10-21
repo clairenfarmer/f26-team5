@@ -1,0 +1,8 @@
+package com.csc340.hobbycircles.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+public record CommentReplyRequest(@NotBlank @Size(max = 2000) String message) {
+
+}
