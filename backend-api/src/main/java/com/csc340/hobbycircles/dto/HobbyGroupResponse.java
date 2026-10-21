@@ -8,7 +8,7 @@ public record HobbyGroupResponse(
     String email,
     Interest interest
 ) {
-    public static HobbyGroupResponse fromHobbyGroup(HobbyGroup hobbyGroup) {
+    public static HobbyGroupResponse from(HobbyGroup hobbyGroup) {
         return new HobbyGroupResponse(
             hobbyGroup.getId(),
             hobbyGroup.getName(),

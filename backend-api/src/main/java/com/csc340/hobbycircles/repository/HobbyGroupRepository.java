@@ -10,7 +10,7 @@ import com.csc340.hobbycircles.entity.HobbyGroup;
 
 
 public interface HobbyGroupRepository extends JpaRepository<HobbyGroup, Long> {
-    boolean existsByEmail(String email);
+    boolean existsByEmailIgnoreCase(String email);
 
     List<HobbyGroup> findByInterestContainingIgnoreCase(String category);
 
