@@ -56,7 +56,7 @@ public class IndividualController {
         return individualService.getProfile(individualId);
     }
 
-    //uodating individual profile
+    //updating individual profile
     @PutMapping("/{individualId}")
     public IndividualResponse updateProfile(
             @PathVariable Long individualId,
@@ -69,7 +69,8 @@ public class IndividualController {
     public List<RsvpResponse> rsvps(@PathVariable Long individualId) {
         return rsvpService.listForIndividual(individualId);
     }
-
+    
+    // all comments made by an individual
     @GetMapping("/{individualId}/comments")
     public List<CommentResponse> reviews(@PathVariable Long individualId) {
         return commentService.listForIndividual(individualId);
