@@ -5,7 +5,7 @@ import com.csc340.hobbycircles.entity.Comment;
 import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment, Long>  {
-    List<Comment> findAllByIndividualIdOrderByCommentDateDescIdDesc(Long individualId);
-    List<Comment> findAllByHobbyGroupIdOrderByCommentDateDescIdDesc(Long hobbyGroupId);
+    List<Comment> findAllByIndividualId(Long individualId);
+    List<Comment> findAllByHobbyGroupId(Long hobbyGroupId);
 }
 
