@@ -1,6 +1,7 @@
 package com.csc340.hobbycircles.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.csc340.hobbycircles.service.CommentService;
@@ -28,6 +29,7 @@ import com.csc340.hobbycircles.dto.EventResponse;
 import com.csc340.hobbycircles.dto.EventUpdateRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupUpdateRequest;
 import com.csc340.hobbycircles.dto.RsvpResponse;
+import com.csc340.hobbycircles.entity.Interest;
 import com.csc340.hobbycircles.dto.CommentResponse;
 import com.csc340.hobbycircles.dto.CommentReplyRequest;
 import com.csc340.hobbycircles.service.RsvpService;
@@ -72,6 +74,14 @@ public class HobbyGroupController {
 
         HobbyGroupResponse group = hobbyGroupService.getProfile(hobbyGroupId);
         return ResponseEntity.ok(group);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<HobbyGroupResponse>> browseGroups(
+            @RequestParam(required = false) Interest interest) {
+                
+        List<HobbyGroupResponse> groups = hobbyGroupService.browse(interest);
+        return ResponseEntity.ok(groups);
     }
 
     // Event endpoints
