@@ -3,6 +3,7 @@ package com.csc340.hobbycircles.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.csc340.hobbycircles.service.CommentService;
 import com.csc340.hobbycircles.service.EventService;
 import com.csc340.hobbycircles.service.HobbyGroupService;
 
@@ -28,7 +29,7 @@ import com.csc340.hobbycircles.dto.EventUpdateRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupUpdateRequest;
 import com.csc340.hobbycircles.dto.RsvpResponse;
 import com.csc340.hobbycircles.dto.CommentResponse;
-import com.csc340.hobbycircles.dto.CommentReply;
+import com.csc340.hobbycircles.dto.CommentReplyRequest;
 import com.csc340.hobbycircles.service.RsvpService;
 
 @RestController 
@@ -40,11 +41,11 @@ public class HobbyGroupController {
     private final CommentService commentService;
 
     // hobby group
-    public HobbyGroupController(HobbyGroupService hobbyGroupService, EventService eventService) {
+    public HobbyGroupController(HobbyGroupService hobbyGroupService, EventService eventService, RsvpService rsvpService, CommentService commentService) {
         this.hobbyGroupService = hobbyGroupService;
         this.eventService = eventService;
-        this.rsvpService = new RsvpService();
-        this.commentService = new CommentService();
+        this.rsvpService = rsvpService;
+        this.commentService = commentService;
     }
 
     // HobbyGroup profile endpoints
@@ -125,7 +126,7 @@ public class HobbyGroupController {
     public ResponseEntity<List<CommentResponse>> viewComments(
             @PathVariable Long hobbyGroupId) {
 
-        List<CommentResponse> comments = commentService.getComments(hobbyGroupId);
+        List<CommentResponse> comments = commentService.listForHobbyGroup(hobbyGroupId);
         return ResponseEntity.ok(comments);
     }
 
@@ -133,9 +134,9 @@ public class HobbyGroupController {
     public ResponseEntity<CommentResponse> replyToComment(
             @PathVariable Long hobbyGroupId,
             @PathVariable Long commentId,
-            @Valid @RequestBody CommentReply reply) {
+            @Valid @RequestBody CommentReplyRequest reply) {
 
-        CommentResponse commentCreated = commentService.replyToComment(hobbyGroupId, commentId, reply);
+        CommentResponse commentCreated = commentService.reply(hobbyGroupId, commentId, reply);
         return ResponseEntity.status(HttpStatus.CREATED).body(commentCreated);
     }
 }
