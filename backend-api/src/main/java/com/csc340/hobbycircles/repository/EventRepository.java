@@ -15,7 +15,7 @@ public interface EventRepository extends JpaRepository<Event, Long> {
 
     List<Event> findAllByHobbygroupIdAndStatusIgnoreCaseOrderById(Long hobbygroupId, String status);
 
-    List<Event> findAllByCategoryIgnoreCaseAndStatusIgnoreCaseOrderById(String category, String status);
-
+    List<Event> findAllByInterestAndStatusIgnoreCaseOrderById(Interest interest, String status);
+    
     List<Event> findAllByStatusIgnoreCaseOrderById(String string);
 }
