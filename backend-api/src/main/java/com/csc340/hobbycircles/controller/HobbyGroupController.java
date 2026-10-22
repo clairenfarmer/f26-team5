@@ -26,6 +26,10 @@ import com.csc340.hobbycircles.dto.EventRequest;
 import com.csc340.hobbycircles.dto.EventResponse;
 import com.csc340.hobbycircles.dto.EventUpdateRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupUpdateRequest;
+import com.csc340.hobbycircles.dto.RsvpResponse;
+import com.csc340.hobbycircles.dto.CommentResponse;
+import com.csc340.hobbycircles.dto.CommentReply;
+import com.csc340.hobbycircles.service.RsvpService;
 
 @RestController 
 @RequestMapping ("/api/hobbygroups")
