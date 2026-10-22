@@ -3,6 +3,7 @@ package com.csc340.hobbycircles.controller;
 import java.net.URI;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,10 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.csc340.hobbycircles.service.IndividualService;
 import jakarta.validation.Valid;
 import com.csc340.hobbycircles.service.EventService;
+import com.csc340.hobbycircles.dto.CommentRequest;
 import com.csc340.hobbycircles.dto.CommentResponse;
 import com.csc340.hobbycircles.dto.RsvpResponse;
 import com.csc340.hobbycircles.dto.IndividualRegistrationRequest;
@@ -83,6 +86,16 @@ public class IndividualController {
     @GetMapping("/{individualId}/comments")
     public List<CommentResponse> reviews(@PathVariable Long individualId) {
         return commentService.listForIndividual(individualId);
+    }
+
+    // comment on hobbyGroup
+    @PostMapping("/{individualId}/comments")
+    public ResponseEntity<CommentResponse> createComment(
+            @PathVariable Long individualId,
+            @RequestParam Long hobbyGroupId,
+            @Valid @RequestBody CommentRequest request) {
+        CommentResponse created = commentService.create(individualId, hobbyGroupId, request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
 }
