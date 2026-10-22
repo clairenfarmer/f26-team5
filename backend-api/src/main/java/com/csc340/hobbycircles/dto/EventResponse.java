@@ -1,5 +1,6 @@
 package com.csc340.hobbycircles.dto;
 
+import com.csc340.hobbycircles.entity.Interest;
 import com.csc340.hobbycircles.entity.Event;
 
 public record EventResponse(
@@ -9,6 +10,7 @@ public record EventResponse(
     String description,
     String location,
     String time,
+    Interest Interest,
     String status,
     int rsvpCount
 ) {
@@ -20,6 +22,7 @@ public record EventResponse(
             event.getDescription(),
             event.getLocation(),
             event.getTime().toString(),
+            event.getInterest(),
             event.getStatus(),
             event.getRsvps() == null ? 0 : event.getRsvps().size()
         );

@@ -62,6 +62,9 @@ public class EventService {
 
     public EventResponse updateEvent(Long hobbyGroupId, Long eventId, EventUpdateRequest request) {
         Event event = findEvent(eventId);
+        if (!event.getHobbygroup().getId().equals(hobbyGroupId)) {
+    throw new BadRequestException("Event does not belong to this hobby group.");
+}
         event.setName(request.name());
         event.setDescription(request.description());
         event.setInterest(request.interest());
@@ -78,7 +81,7 @@ public class EventService {
     }
 
     @Transactional (readOnly = true)
-    public List<EventResponse> browse(Interest interest){
+    public List<EventResponse> findByInterest(Interest interest){
         List<Event> events = interest == null || interest.toString().isBlank()
                 ? eventRepository.findAll()
                 : eventRepository.findAllByInterestOrderById(interest);
