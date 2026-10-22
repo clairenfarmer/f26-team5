@@ -9,5 +9,6 @@ public enum Interest {
     TECHNOLOGY,
     EDUCATION,
     FOOD,
+    FILM,
     OTHER
 }
