@@ -7,12 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.csc340.hobbycircles.entity.HobbyGroup;
+import com.csc340.hobbycircles.entity.Interest;
 
 
 public interface HobbyGroupRepository extends JpaRepository<HobbyGroup, Long> {
     boolean existsByEmailIgnoreCase(String email);
 
-    List<HobbyGroup> findByInterestContainingIgnoreCase(String category);
+    List<HobbyGroup> findByInterestContainingIgnoreCase(Interest category);
 
     @Query ("""
         select distinct group
@@ -22,6 +23,6 @@ public interface HobbyGroupRepository extends JpaRepository<HobbyGroup, Long> {
             or lower(event.category) = lower(:category)
                 and upper(event.status) = 'PUBLISHED'
     """)
-    List<HobbyGroup> findMatchingCategory(@Param("category") String category);
+    List<HobbyGroup> findMatchingCategory(@Param("category") Interest category);
     List<HobbyGroup> findByHobbyGroupId(Long hobbyGroupId);
 }

@@ -10,6 +10,7 @@ import com.csc340.hobbycircles.dto.HobbyGroupRegistrationRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupResponse;
 import com.csc340.hobbycircles.dto.HobbyGroupUpdateRequest;
 import com.csc340.hobbycircles.entity.HobbyGroup;
+import com.csc340.hobbycircles.entity.Interest;
 import com.csc340.hobbycircles.repository.HobbyGroupRepository;
 
 
@@ -44,10 +45,10 @@ public class HobbyGroupService {
     }
 
     @Transactional(readOnly = true)
-    public List<HobbyGroupResponse> browse(String category) {
-        List<HobbyGroup> hobbyGroups = category == null || category.isBlank()
+    public List<HobbyGroupResponse> browse(Interest category) {
+        List<HobbyGroup> hobbyGroups = category == null
                 ? hobbyGroupRepository.findAll()
-                : hobbyGroupRepository.findMatchingCategory(category.trim());
+                : hobbyGroupRepository.findMatchingCategory(category);
         return hobbyGroups.stream()
                 .map(HobbyGroupResponse::from)
                 .toList();

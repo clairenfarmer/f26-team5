@@ -60,7 +60,7 @@ public class EventService {
                 .toList();
     }
 
-    public EventResponse updateEvent(Long eventId, EventUpdateRequest request) {
+    public EventResponse updateEvent(Long hobbyGroupId, Long eventId, EventUpdateRequest request) {
         Event event = findEvent(eventId);
         event.setName(request.name());
         event.setDescription(request.description());
