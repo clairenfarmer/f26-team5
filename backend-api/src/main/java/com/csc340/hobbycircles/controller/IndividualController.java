@@ -19,6 +19,7 @@ import com.csc340.hobbycircles.dto.RsvpResponse;
 import com.csc340.hobbycircles.dto.IndividualRegistrationRequest;
 import com.csc340.hobbycircles.dto.IndividualResponse;
 import com.csc340.hobbycircles.dto.IndividualUpdateRequest;
+import com.csc340.hobbycircles.dto.RsvpEventRequest;
 import com.csc340.hobbycircles.service.CommentService;
 import com.csc340.hobbycircles.service.RsvpService;
 import com.csc340.hobbycircles.service.HobbyGroupService;
@@ -68,6 +69,14 @@ public class IndividualController {
     @GetMapping("/{individualId}/rsvps")
     public List<RsvpResponse> rsvps(@PathVariable Long individualId) {
         return rsvpService.listForIndividual(individualId);
+    }
+
+    // rsvp to an event
+    @PostMapping("/{individualId}/rsvps")
+    public RsvpResponse rsvpEvent(
+            @PathVariable Long individualId,
+            @Valid @RequestBody RsvpEventRequest request) {
+        return rsvpService.create(individualId, request);
     }
     
     // all comments made by an individual
