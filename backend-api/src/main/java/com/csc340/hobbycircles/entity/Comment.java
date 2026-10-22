@@ -37,7 +37,7 @@ public class Comment {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "hobbygroup_id", nullable = false)
-    private HobbyGroup hobbyGroup;
+    private HobbyGroup hobbygroup;
 
     // constructors, getters, and setters
     public Comment() {
@@ -47,7 +47,7 @@ public class Comment {
         this.message = message;
         this.replyMessage = replyMessage;
         this.individual = individual;
-        this.hobbyGroup = hobbyGroup;
+        this.hobbygroup = hobbyGroup;
     }
 
     public Long getId() {
@@ -83,11 +83,11 @@ public class Comment {
     }
 
     public HobbyGroup getHobbyGroup() {
-        return hobbyGroup;
+        return hobbygroup;
     }
 
     public void setHobbyGroup(HobbyGroup hobbyGroup) {
-        this.hobbyGroup = hobbyGroup;
+        this.hobbygroup = hobbyGroup;
     }
 
     
