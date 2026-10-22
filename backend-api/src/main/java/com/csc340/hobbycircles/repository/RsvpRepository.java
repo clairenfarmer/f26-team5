@@ -8,4 +8,5 @@ public interface RsvpRepository extends JpaRepository<com.csc340.hobbycircles.en
     boolean existsByIndividualIdAndEventId(Long individualId, Long eventId);
 
     List<RSVP> findAllByEventId(Long eventId);
+    List<RSVP> findAllByIndividualId(Long individualId);
 }
