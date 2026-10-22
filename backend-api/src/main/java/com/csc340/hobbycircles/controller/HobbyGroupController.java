@@ -32,11 +32,15 @@ import com.csc340.hobbycircles.dto.HobbyGroupUpdateRequest;
 public class HobbyGroupController {
     private final HobbyGroupService hobbyGroupService;
     private final EventService eventService;
+    private final RsvpService rsvpService;
+    private final CommentService commentService;
 
     // hobby group
     public HobbyGroupController(HobbyGroupService hobbyGroupService, EventService eventService) {
         this.hobbyGroupService = hobbyGroupService;
         this.eventService = eventService;
+        this.rsvpService = new RsvpService();
+        this.commentService = new CommentService();
     }
 
     // HobbyGroup profile endpoints
@@ -127,7 +131,7 @@ public class HobbyGroupController {
             @PathVariable Long commentId,
             @Valid @RequestBody CommentReply reply) {
 
-        CommentResponse reply = commentService.replyToComment(hobbyGroupId, commentId, reply);
-        return ResponseEntity.status(HttpStatus.CREATED).body(reply);
+        CommentResponse commentCreated = commentService.replyToComment(hobbyGroupId, commentId, reply);
+        return ResponseEntity.status(HttpStatus.CREATED).body(commentCreated);
     }
 }
