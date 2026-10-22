@@ -51,11 +51,11 @@ public class HobbyGroup {
     private Interest interest;
 
     // relationships
-    @OneToMany (mappedBy = "hobbyGroup", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany (mappedBy = "hobbygroup", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Event> events = new ArrayList<>();
 
-    @OneToMany (mappedBy = "hobbyGroup", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany (mappedBy = "hobbygroup", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Comment> comments = new ArrayList<>();
 

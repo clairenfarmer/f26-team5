@@ -3,7 +3,9 @@ package com.csc340.hobbycircles.entity;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,14 +49,13 @@ public class Event {
     @Column(length = 255)
     private String location;
 
-    @Size(max = 50)
     @Column(length = 50)
     private LocalDateTime time;
 
     @NotBlank
     @Size(max = 30)
     @Column(nullable = false, length = 30)
-    private String status;
+    private String status = "PUBLISHED";
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
