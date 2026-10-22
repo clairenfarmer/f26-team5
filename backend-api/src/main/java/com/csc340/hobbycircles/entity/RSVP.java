@@ -9,9 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Size;
 
-@Entity @Table(name = "rsvp")
+@Entity @Table(name = "rsvp", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"individual_id", "event_id"})
+})
 public class RSVP {
     
     @Id
@@ -23,7 +26,7 @@ public class RSVP {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "individual_id", nullable = false, unique = true)
+    @JoinColumn(name = "individual_id", nullable = false)
     private Individual individual;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
