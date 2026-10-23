@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.csc340.hobbycircles.service.IndividualService;
 import jakarta.validation.Valid;
@@ -92,9 +91,8 @@ public class IndividualController {
     @PostMapping("/{individualId}/comments")
     public ResponseEntity<CommentResponse> createComment(
             @PathVariable Long individualId,
-            @RequestParam Long hobbyGroupId,
             @Valid @RequestBody CommentRequest request) {
-        CommentResponse created = commentService.create(individualId, hobbyGroupId, request);
+        CommentResponse created = commentService.create(individualId, request.hobbyGroupId(), request);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 

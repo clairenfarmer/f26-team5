@@ -60,7 +60,7 @@ public class CommentService {
         if (!hobbyGroupRepository.existsById(hobbyGroupId)) {
             throw new NotFoundException("Hobby Group " + hobbyGroupId + " was not found.");
         }
-        return commentRepository.findAllByHobbyGroupId(hobbyGroupId)
+        return commentRepository.findAllByHobbygroupId(hobbyGroupId)
                 .stream().map(CommentResponse::from).toList();
     }
 

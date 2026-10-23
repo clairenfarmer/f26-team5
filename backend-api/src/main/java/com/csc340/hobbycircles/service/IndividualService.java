@@ -18,6 +18,7 @@ public class IndividualService {
         this.individualRepository = individualRepository;
     }
 
+    @Transactional
     public IndividualResponse register(IndividualRegistrationRequest request) {
         ensureEmailAvailable(request.email());
         Individual individual = new Individual();
@@ -33,6 +34,7 @@ public class IndividualService {
         return IndividualResponse.from(findIndividual(individualId));
     }
 
+    @Transactional
     public IndividualResponse updateProfile(Long individualId, IndividualUpdateRequest request) {
         Individual individual = findIndividual(individualId);
         if (!individual.getEmail().equalsIgnoreCase(request.email())
