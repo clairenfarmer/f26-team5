@@ -24,9 +24,9 @@ transitions.
 | Method | Path                            | Purpose                                                    | Response code | Error codes | User story                                                              |
 | ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
 | `POST` | `/api/hobbygroups`              | Register a group profile   |`201 Created` | `400, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
-| `PUT` | `/api/hobbygroups/{hobbyGroupId}`| Update a group profile     |`201 Created` | `400, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
-| `GET` | `/api/hobbygroups/{hobbyGroupId}`| View a group profile       |`201 Created` | `400, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
-| `GET` | `/api/hobbygroups`               | Browse groups              | `201 Created`| `400, 409`  |[US-1.?](../docs/SRS-HobbyCircles.md#L)
+| `PUT` | `/api/hobbygroups/{hobbyGroupId}`| Update a group profile     |`200 OK` | `400, 404, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
+| `GET` | `/api/hobbygroups/{hobbyGroupId}`| View a group profile       |`200 OK` | `404`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
+| `GET` | `/api/hobbygroups`               | Browse groups              | `200 OK`| `400`  |[US-1.?](../docs/SRS-HobbyCircles.md#L)
 
 ### Example Hobby Group Request
 
@@ -59,10 +59,10 @@ Content-Type: application/json
 
 | Method | Path                            | Purpose                    | Response code | Error codes | User story                                                              |
 | ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
-| `POST` | `/api/hobbygroups/{hobbyGroupId}/events`|Create an event     | `201 Created` | `400, 409`  | [US-2.2](../docs/SRS-HobbyCircles.md#L22)
-| `PUT` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}`|Create an event| `201 Created` | `400, 409`  | [US-2.2](../docs/SRS-HobbyCircles.md#L22)  
-| `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | Browse events          | `201 Created`| `400, 409`  |[US-1.2](../docs/SRS-HobbyCircles.md#L15)
-| `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | View an event          | `201 Created`| `400, 409`  |[US-1.2](../docs/SRS-HobbyCircles.md#L15)     
+| `POST` | `/api/hobbygroups/{hobbyGroupId}/events`|Create an event     | `201 Created` | `400, 404`  | [US-2.2](../docs/SRS-HobbyCircles.md#L22)
+| `PUT` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}`|Update an event| `200 OK` | `400, 404`  | [US-2.2](../docs/SRS-HobbyCircles.md#L22)  
+| `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | Browse events          | `200 OK`| `404`  |[US-1.2](../docs/SRS-HobbyCircles.md#L15)
+| `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | View an event          | `200 OK`| `404`  |[US-1.2](../docs/SRS-HobbyCircles.md#L15)     
 
 Event time uses ISO-8601 local date-time values, for example
 `"2030-05-10T14:30:00"`.
@@ -103,9 +103,9 @@ Content-Type: application/json
 
 | Method  | Path                                                          | Purpose                                               | Response code | Error codes | User story                                                              |
 | ------- | ------------------------------------------------------------- | ----------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
-| `GET` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}/rsvps`| View RSVPs for an event| `201 Created`| `400, 409`  |[US-2.4](../docs/SRS-HobbyCircles.md#L24)                                  |
-| `GET` | `/api/hobbygroups//{hobbyGroupId}/comments`| View comments| `201 Created`| `400, 409`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
-| `POST` | `/{hobbyGroupId}/comments/{commentId}/replies`| Reply to comments| `201 Created`| `400, 409`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
+| `GET` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}/rsvps`| View RSVPs for an event| `200 OK`| `404`  |[US-2.4](../docs/SRS-HobbyCircles.md#L24)                                  |
+| `GET` | `/api/hobbygroups//{hobbyGroupId}/comments`| View comments| `200 OK`| `404`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
+| `POST` | `/{hobbyGroupId}/comments/{commentId}/replies`| Reply to comments| `201 Created`| `400, 404`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
 
 ### Example Comment Reply Request
 
