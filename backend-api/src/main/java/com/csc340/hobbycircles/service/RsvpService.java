@@ -63,7 +63,7 @@ public class RsvpService {
         RSVP rsvp = new RSVP();
         rsvp.setIndividual(individual);
         rsvp.setEvent(event);
-        rsvp.setDescription(request.description());
+        
 
         return RsvpResponse.from(rsvpRepository.save(rsvp));
     }
