@@ -52,14 +52,14 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     And   I can see hobby groups available 
   ```
 
-- **US‑2 — Browse groups by interest**  
+- **US‑2 — Browse all groups or by interest**  
   _Story:_ As a customer, I want to browse groups filtered by interest so that I can find groups aligned with my hobbies  
   _Acceptance:_
   ```gherkin
-  Scenario: Browse groups by interest tag
+  Scenario: Browse all groups or by interest tag
     Given I am logged in as a user
-    When  I select an interest tag
-    Then  I can see all hobby groups labeled with that tag
+    When  I select certain interest tags, or none
+    Then  I can see all hobby groups labeled with those tags, or just all hobby groups
   ```
 
 - **US‑3 — RSVP to events**  
