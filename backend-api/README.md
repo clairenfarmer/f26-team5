@@ -2,7 +2,7 @@
 
 # UML Class Diagram
 
-![Class Diagram]()
+![Class Diagram](../docs/umldiagram.png)
 
 # API Overview
 
