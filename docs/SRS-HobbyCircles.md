@@ -52,7 +52,17 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     And   I can see hobby groups available 
   ```
 
-- **US‑2 — Browse all groups or by interest**  
+- **US‑2 — Edit an account**  
+  _Story:_ As a customer, I want to edit my profile so it will reflect my current interests
+  _Acceptance:_
+  ```gherkin
+  Scenario: Edit an account
+    Given I am registered 
+    When  I select details on my profile
+    Then  I can change those details and my profile will update
+  ```
+
+- **US‑3 — Browse all groups or by interest**  
   _Story:_ As a customer, I want to browse groups filtered by interest so that I can find groups aligned with my hobbies  
   _Acceptance:_
   ```gherkin
@@ -62,7 +72,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  I can see all hobby groups labeled with those tags, or just all hobby groups
   ```
 
-- **US‑3 — RSVP to events**  
+- **US‑4 — RSVP to events**  
   _Story:_ As a customer, I want to RSVP to events so that my attendance is accounted for
   _Acceptance:_
   ```gherkin
@@ -72,7 +82,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  The event is shown in my calendar
   ```
 
-- **US‑4 — Leave comments under group pages**  
+- **US‑5 — Leave comments under group pages**  
   _Story:_ As a customer, I want to leave comments on hobby group profiles so that I can ask questions.
   _Acceptance:_
   ```gherkin
@@ -82,7 +92,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  The comment should be saved and be visisble to groups and other users
   ```
 
-- **US‑5 — View calendar of events**  
+- **US‑6 — View calendar of events**  
   _Story:_ As a customer, I want to have a private calendar so that I can keep track of my past and future events that I have RSVP'd to.  
   _Acceptance:_
   ```gherkin
@@ -94,7 +104,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ### 2.2 Provider (Group) Stories
-- **US-6 — Create group profile**  
+- **US-7 — Create group profile**  
   _Story:_ As a group, I want to create events so that individuals can find my group and RSVP to my events .
   _Acceptance:_
   ```gherkin
@@ -105,7 +115,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     And <my profile should be visible to customers>
   ```
 
-- **US-7 — Publish events**  
+- **US-8 — Publish events**  
   _Story:_ As a group, I want to publish events so that I can advertise my group and its events.
   _Acceptance:_
   ```gherkin
@@ -115,7 +125,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  <the event should be saved and visible to individuals>
   ```
 
-  **US-8 — Publish and reply to comments**  
+  **US-9 — Publish and reply to comments**  
   _Story:_ As a group, I want to publish and reply to comments so that customer questions can be answered. 
   _Acceptance:_
   ```gherkin
@@ -125,7 +135,7 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
     Then  <I should be able to submit a response or standalone comment under the event>
   ```
 
-  **US-8 — View events calendar**  
+  **US-10 — View events calendar**  
   _Story:_ As a group, I want to view my events calendar so that I can see all future events hosted by my group
   _Acceptance:_
   ```gherkin
