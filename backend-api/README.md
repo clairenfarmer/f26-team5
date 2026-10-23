@@ -27,6 +27,9 @@ transitions.
 | `PUT` | `/api/hobbygroups/{hobbyGroupId}`| Update a group profile     |`200 OK` | `400, 404, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
 | `GET` | `/api/hobbygroups/{hobbyGroupId}`| View a group profile       |`200 OK` | `404`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
 | `GET` | `/api/hobbygroups`               | Browse groups              | `200 OK`| `400`  |[US-1.?](../docs/SRS-HobbyCircles.md#L)
+| `POST` | `/api/individuals`              | Register an individual profile | `200 Created`| `400, 409`  |[US-1](../docs/SRS-HobbyCircles.md#L44)
+| `PUT` | `/api/individuals/{individualId}`| Update a group profile     |`200 OK` | `400, 404, 409`  |[US-2](../docs/SRS-HobbyCircles.md#L55)
+| `GET` | `/api/individuals/{individualId}`| View an individual profile       |`200 OK` | `404`  |[US-2](../docs/SRS-HobbyCircles.md#L55)
 
 ### Example Hobby Group Request
 
@@ -53,7 +56,31 @@ Content-Type: application/json
     "interest": "SPORTS"
   }
 ```
+### Example Individual Request
 
+```http
+POST /api/individuals
+Content-Type: application/json
+
+ {
+    "name": "John Doe",
+    "email": "jDoe@example.com",
+    "password": "iluvmovies123",
+    "interest": "FILM"
+  }
+```
+### Example Individual Update Request
+
+```http
+PUT /api/individuals/{individualId}
+Content-Type: application/json
+
+ {
+    "name": "John Stewart",
+    "email": "jStewart@example.com",
+    "interest": "FIlM"
+  }
+```
 
 ## Events
 
@@ -106,6 +133,10 @@ Content-Type: application/json
 | `GET` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}/rsvps`| View RSVPs for an event| `200 OK`| `404`  |[US-2.4](../docs/SRS-HobbyCircles.md#L24)                                  |
 | `GET` | `/api/hobbygroups//{hobbyGroupId}/comments`| View comments| `200 OK`| `404`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
 | `POST` | `/{hobbyGroupId}/comments/{commentId}/replies`| Reply to comments| `201 Created`| `400, 404`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
+| `GET` | `/api/individuals/{individualId}/rsvps`| View RSVP's created       |`200 OK` | `404`  |[US-6](../docs/SRS-HobbyCircles.md#L95)
+| `POST` | `/api/individuals/{individualId}/rsvps` | RSVP to an event | `200 Created`| `400, 409`  |[US-4](../docs/SRS-HobbyCircles.md#L75)
+| `GET` | `/api/individuals/{individualId}/comment`| View comments an individual has created   |`200 OK` | `404`  |[US-5](../docs/SRS-HobbyCircles.md#L85)
+| `POST` | `/api/individuals/{individualId}/comments` | Create a comment | `200 Created`| `400, 409`  |[US-5](../docs/SRS-HobbyCircles.md#L85)
 
 ### Example Comment Reply Request
 
@@ -116,4 +147,25 @@ Content-Type: application/json
 {
     "replyMessage": "Great question! Yes, beginners are welcome — we have a walk/run group too."
   }
+```
+### Example RSVP Request
+
+```http
+POST /api/individuals/{individualId}/rsvps
+Content-Type: application/json
+
+{
+    "eventId": 1
+}
+```
+### Example Comment Request
+
+```http
+POST /api/individuals/{individualId}/comments
+Content-Type: application/json
+
+{
+    "hobbyGroupId": 1,
+    "message":"Is this group open to beginners?"
+}
 ```
