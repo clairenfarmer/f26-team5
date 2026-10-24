@@ -23,10 +23,10 @@ transitions.
 
 | Method | Path                            | Purpose                                                    | Response code | Error codes | User story                                                              |
 | ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
-| `POST` | `/api/hobbygroups`              | Register a group profile   |`201 Created` | `400, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
-| `PUT` | `/api/hobbygroups/{hobbyGroupId}`| Update a group profile     |`200 OK` | `400, 404, 409`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
-| `GET` | `/api/hobbygroups/{hobbyGroupId}`| View a group profile       |`200 OK` | `404`  |[US-2.1](../docs/SRS-HobbyCircles.md#L21)
-| `GET` | `/api/hobbygroups`               | Browse groups              | `200 OK`| `400`  |[US-1.?](../docs/SRS-HobbyCircles.md#L)
+| `POST` | `/api/hobbygroups`              | Register a group profile   |`201 Created` | `400, 409`  |[US-7](../docs/SRS-HobbyCircles.md#L107)
+| `PUT` | `/api/hobbygroups/{hobbyGroupId}`| Update a group profile     |`200 OK` | `400, 404, 409`  |[US-7](../docs/SRS-HobbyCircles.md#L107)
+| `GET` | `/api/hobbygroups/{hobbyGroupId}`| View a group profile       |`200 OK` | `404`  |[US-3](../docs/SRS-HobbyCircles.md#L65)
+| `GET` | `/api/hobbygroups`               | Browse groups              | `200 OK`| `400`  |[US-3](../docs/SRS-HobbyCircles.md#L65)
 | `POST` | `/api/individuals`              | Register an individual profile | `200 Created`| `400, 409`  |[US-1](../docs/SRS-HobbyCircles.md#L44)
 | `PUT` | `/api/individuals/{individualId}`| Update a group profile     |`200 OK` | `400, 404, 409`  |[US-2](../docs/SRS-HobbyCircles.md#L55)
 | `GET` | `/api/individuals/{individualId}`| View an individual profile       |`200 OK` | `404`  |[US-2](../docs/SRS-HobbyCircles.md#L55)
@@ -86,9 +86,9 @@ Content-Type: application/json
 
 | Method | Path                            | Purpose                    | Response code | Error codes | User story                                                              |
 | ------ | ------------------------------- | ---------------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
-| `POST` | `/api/hobbygroups/{hobbyGroupId}/events`|Create an event     | `201 Created` | `400, 404`  | [US-2.2](../docs/SRS-HobbyCircles.md#L22)
-| `PUT` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}`|Update an event| `200 OK` | `400, 404`  | [US-2.2](../docs/SRS-HobbyCircles.md#L22)  
-| `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | Browse events          | `200 OK`| `404`  |[US-1.2](../docs/SRS-HobbyCircles.md#L15)
+| `POST` | `/api/hobbygroups/{hobbyGroupId}/events`|Create an event     | `201 Created` | `400, 404`  | [US-8](../docs/SRS-HobbyCircles.md#L119)
+| `PUT` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}`|Update an event| `200 OK` | `400, 404`  | [US-8](../docs/SRS-HobbyCircles.md#L119)  
+| `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | Browse events          | `200 OK`| `404`  |[US-3](../docs/SRS-HobbyCircles.md#L65)
 | `GET` | `/api/hobbygroups/{hobbyGroupId}/events` | View an event          | `200 OK`| `404`  |[US-1.2](../docs/SRS-HobbyCircles.md#L15)     
 
 Event time uses ISO-8601 local date-time values, for example
@@ -130,9 +130,9 @@ Content-Type: application/json
 
 | Method  | Path                                                          | Purpose                                               | Response code | Error codes | User story                                                              |
 | ------- | ------------------------------------------------------------- | ----------------------------------------------------- | ------------- | ----------- | ----------------------------------------------------------------------- |
-| `GET` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}/rsvps`| View RSVPs for an event| `200 OK`| `404`  |[US-2.4](../docs/SRS-HobbyCircles.md#L24)                                  |
+| `GET` | `/api/hobbygroups/{hobbyGroupId}/events/{eventId}/rsvps`| View RSVPs for an event| `200 OK`| `404`  |[US-4](../docs/SRS-HobbyCircles.md#L75)                                  |
 | `GET` | `/api/hobbygroups//{hobbyGroupId}/comments`| View comments| `200 OK`| `404`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
-| `POST` | `/{hobbyGroupId}/comments/{commentId}/replies`| Reply to comments| `201 Created`| `400, 404`  |[US-2.3](../docs/SRS-HobbyCircles.md#L23) 
+| `POST` | `/{hobbyGroupId}/comments/{commentId}/replies`| Reply to comments| `201 Created`| `400, 404`  |[US-9](../docs/SRS-HobbyCircles.md#L128) 
 | `GET` | `/api/individuals/{individualId}/rsvps`| View RSVP's created       |`200 OK` | `404`  |[US-6](../docs/SRS-HobbyCircles.md#L95)
 | `POST` | `/api/individuals/{individualId}/rsvps` | RSVP to an event | `200 Created`| `400, 409`  |[US-4](../docs/SRS-HobbyCircles.md#L75)
 | `GET` | `/api/individuals/{individualId}/comment`| View comments an individual has created   |`200 OK` | `404`  |[US-5](../docs/SRS-HobbyCircles.md#L85)
