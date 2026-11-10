@@ -3,6 +3,7 @@ package com.csc340.hobbycircles.service;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,9 +19,11 @@ import com.csc340.hobbycircles.repository.HobbyGroupRepository;
 @Transactional
 public class HobbyGroupService {
     private final HobbyGroupRepository hobbyGroupRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public HobbyGroupService(HobbyGroupRepository hobbyGroupRepository) {
+    public HobbyGroupService(HobbyGroupRepository hobbyGroupRepository, PasswordEncoder passwordEncoder) {
         this.hobbyGroupRepository = hobbyGroupRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public HobbyGroupResponse register(HobbyGroupRegistrationRequest request) {
@@ -32,11 +35,21 @@ public class HobbyGroupService {
         HobbyGroup hobbyGroup = new HobbyGroup();
         hobbyGroup.setName(request.name());
         hobbyGroup.setEmail(request.email());
-        hobbyGroup.setPassword(request.password());
+        hobbyGroup.setPassword(passwordEncoder.encode(request.password()));
         hobbyGroup.setInterest(request.interest());
 
         HobbyGroup savedHobbyGroup = hobbyGroupRepository.save(hobbyGroup);
         return HobbyGroupResponse.from(savedHobbyGroup);
+    }
+
+    @Transactional(readOnly = true)
+    public HobbyGroupResponse authenticate(String email, String password) {
+        HobbyGroup hobbyGroup = hobbyGroupRepository.findByEmailIgnoreCase(email.trim())
+                .orElseThrow(() -> new BadRequestException("Invalid email or password."));
+        if (!passwordEncoder.matches(password, hobbyGroup.getPassword())) {
+            throw new BadRequestException("Invalid email or password.");
+        }
+        return HobbyGroupResponse.from(hobbyGroup);
     }
 
     @Transactional(readOnly = true)
