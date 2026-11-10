@@ -6,6 +6,8 @@ import com.csc340.hobbycircles.dto.IndividualUpdateRequest;
 import com.csc340.hobbycircles.entity.Individual;
 import com.csc340.hobbycircles.repository.IndividualRepository;
 import java.util.Locale;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,9 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class IndividualService {
     private final IndividualRepository individualRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public IndividualService(IndividualRepository individualRepository) {
+    public IndividualService(IndividualRepository individualRepository, PasswordEncoder passwordEncoder) {
         this.individualRepository = individualRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
@@ -24,9 +28,19 @@ public class IndividualService {
         Individual individual = new Individual();
         individual.setName(request.name().trim());
         individual.setEmail(request.email().trim().toLowerCase(Locale.ROOT));
-        individual.setPassword(request.password());
+        individual.setPassword(passwordEncoder.encode(request.password()));
         individual.setInterest(request.interest());
         return IndividualResponse.from(individualRepository.save(individual));
+    }
+
+    @Transactional(readOnly = true)
+    public IndividualResponse authenticate(String email, String password) {
+        Individual individual = individualRepository.findByEmailIgnoreCase(email.trim())
+                .orElseThrow(() -> new BadRequestException("Invalid email or password."));
+        if (!passwordEncoder.matches(password, individual.getPassword())) {
+            throw new BadRequestException("Invalid email or password.");
+        }
+        return IndividualResponse.from(individual);
     }
 
     @Transactional(readOnly = true)
