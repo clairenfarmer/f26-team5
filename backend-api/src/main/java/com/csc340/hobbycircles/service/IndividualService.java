@@ -29,7 +29,7 @@ public class IndividualService {
         individual.setName(request.name().trim());
         individual.setEmail(request.email().trim().toLowerCase(Locale.ROOT));
         individual.setPassword(passwordEncoder.encode(request.password()));
-        individual.setInterest(request.interest());
+        individual.setInterests(request.interests());
         return IndividualResponse.from(individualRepository.save(individual));
     }
 
@@ -57,7 +57,7 @@ public class IndividualService {
         }
         individual.setName(request.name().trim());
         individual.setEmail(request.email().trim().toLowerCase(Locale.ROOT));
-        individual.setInterest(request.interest());
+        individual.setInterests(request.interests());
         return IndividualResponse.from(individualRepository.save(individual));
     }
 

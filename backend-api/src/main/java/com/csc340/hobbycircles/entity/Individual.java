@@ -1,24 +1,30 @@
 package com.csc340.hobbycircles.entity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 @Entity @Table(name = "individuals")
@@ -46,9 +52,12 @@ public class Individual {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
-    @NotNull
+    @NotEmpty
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "individual_interests", joinColumns = @JoinColumn(name = "individual_id"))
     @Enumerated(EnumType.STRING)
-    private Interest interest;
+    @Column(name = "interest")
+    private Set<Interest> interests = new HashSet<>();
 
     // relationships
     @OneToMany (mappedBy = "individual", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -63,11 +72,11 @@ public class Individual {
     public Individual() {
     }
 
-    public Individual(String name, String email, String password, Interest interest) {
+    public Individual(String name, String email, String password, Set<Interest> interests) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.interest = interest;
+        this.interests = interests;
     }
 
     // getters and setters
@@ -103,12 +112,12 @@ public class Individual {
         this.password = password;
     }
 
-    public Interest getInterest() {
-        return interest;
+    public Set<Interest> getInterests() {
+        return interests;
     }
 
-    public void setInterest(Interest interest) {
-        this.interest = interest;
+    public void setInterests(Set<Interest> interests) {
+        this.interests = interests;
     }
 
     public List<RSVP> getRsvps() {
