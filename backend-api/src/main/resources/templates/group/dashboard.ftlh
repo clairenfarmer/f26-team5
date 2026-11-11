@@ -31,6 +31,11 @@
                         <div class="detail-item"><span class="detail-label">Status:</span> ${event.status!""}</div>
                         <div class="detail-item"><span class="detail-label">RSVPs:</span> ${event.rsvpCount}</div>
                     </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <button type="button" class="btn btn-primary">View Details</button>
+                        <button type="button" class="btn btn-outline"
+                            style="color: var(--danger-color); border-color: var(--danger-color);">Cancel</button>
+                    </div>
                 </div>
             </#list>
         <#else>
