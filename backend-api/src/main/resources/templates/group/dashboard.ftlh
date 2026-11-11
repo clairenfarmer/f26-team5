@@ -26,9 +26,9 @@
                         </div>
                     </div>
                     <div class="event-details">
-                        <div class="detail-item"><span class="detail-label">Time:</span> ${event.time}</div>
-                        <div class="detail-item"><span class="detail-label">Location:</span> ${event.location}</div>
-                        <div class="detail-item"><span class="detail-label">Status:</span> ${event.status}</div>
+                        <div class="detail-item"><span class="detail-label">Time:</span> ${event.time!""}</div>
+                        <div class="detail-item"><span class="detail-label">Location:</span> ${event.location!""}</div>
+                        <div class="detail-item"><span class="detail-label">Status:</span> ${event.status!""}</div>
                         <div class="detail-item"><span class="detail-label">RSVPs:</span> ${event.rsvpCount}</div>
                     </div>
                 </div>
@@ -49,8 +49,8 @@
             <#if comments?has_content>
                 <#list comments as comment>
                     <div style="padding: 1.5rem; border-bottom: 1px solid var(--light-gray);">
-                        <p style="font-weight: 600;">${comment.individualName}</p>
-                        <p style="color: #666; line-height: 1.5;">${comment.message}</p>
+                        <p style="font-weight: 600;">${comment.individualName!""}</p>
+                        <p style="color: #666; line-height: 1.5;">${comment.message!""}</p>
                         <#if comment.replyMessage?? && comment.replyMessage?has_content>
                             <p style="font-weight: 600;">${comment.hobbyGroupName}</p>
                             <p style="color: #666; line-height: 1.5;">${comment.replyMessage}</p>

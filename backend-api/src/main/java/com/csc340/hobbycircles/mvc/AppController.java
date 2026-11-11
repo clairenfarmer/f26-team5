@@ -12,6 +12,7 @@ import com.csc340.hobbycircles.dto.HobbyGroupResponse;
 import com.csc340.hobbycircles.dto.IndividualResponse;
 import com.csc340.hobbycircles.entity.Interest;
 import com.csc340.hobbycircles.service.BadRequestException;
+import com.csc340.hobbycircles.service.ConflictException;
 import com.csc340.hobbycircles.service.HobbyGroupService;
 import com.csc340.hobbycircles.service.IndividualService;
 
@@ -94,7 +95,14 @@ public class AppController {
             model.addAttribute("error", "Please fix the errors below and try again.");
             return "public/group-register";
         }
-        HobbyGroupResponse hobbyGroup = hobbyGroupService.register(form);
+        HobbyGroupResponse hobbyGroup;
+        try {
+            hobbyGroup = hobbyGroupService.register(form);
+        } catch (ConflictException | BadRequestException e) {
+            model.addAttribute("interests", Interest.values());
+            model.addAttribute("error", e.getMessage());
+            return "public/group-register";
+        }
         setSession(session, hobbyGroup.id(), "group", hobbyGroup.name());
         return "redirect:/hobbygroups/dashboard";
     }
