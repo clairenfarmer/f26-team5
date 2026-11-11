@@ -1,4 +1,4 @@
-<#assign pageTitle="${event.name} - HobbyCircles">
+<#assign pageTitle="${heading!'New Event'} - HobbyCircles">
 <#include "/shared/head.ftlh">
 <#include "/shared/nav.ftlh">
 
@@ -7,7 +7,7 @@
     <div class="container">
         <div class="dashboard-header">
             <div class="dashboard-title">Event Details</div>
-            <div class="dashbaord-subtitle">View details for "${event.name}"</div>
+            <div class="dashboard-subtitle">View details for "${event.name}"</div>
         </div>
     </div>
 </section>

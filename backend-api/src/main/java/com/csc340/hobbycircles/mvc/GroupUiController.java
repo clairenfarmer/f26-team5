@@ -162,14 +162,7 @@ public class GroupUiController {
         String cleanLocation = location.trim();
         String cleanDescription = description == null ? null : description.trim();
 
-        String error = null;
-        if (cleanName.isEmpty() || cleanName.length() > 150) {
-            error = "Event name is required and must be 150 characters or fewer.";
-        } else if (cleanLocation.isEmpty() || cleanLocation.length() > 255) {
-            error = "Location is required and must be 255 characters or fewer.";
-        } else if (cleanDescription != null && cleanDescription.length() > 2000) {
-            error = "Description must be 2000 characters or fewer.";
-        }
+        String error = validateEventFields(cleanName, cleanLocation, cleanDescription);
         if (error != null) {
             model.addAttribute("error", error);
             model.addAttribute("name", cleanName);

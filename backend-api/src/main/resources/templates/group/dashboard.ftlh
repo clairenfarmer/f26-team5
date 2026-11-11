@@ -7,7 +7,7 @@
     <div class="container">
         <div class="dashboard-header">
             <div class="dashboard-title">Welcome, ${group.name}!</div>
-            <div class="dashbaord-subtitle">Manage your events and view your group's details</div>
+            <div class="dashboard-subtitle">Manage your events and view your group's details</div>
         </div>
     </div>
 </section>
@@ -15,7 +15,7 @@
 <!-- Events -->
 <section class="section">
     <div class="container">
-        <h2>Upcoming Events</h2>
+        <h2>Your Events</h2>
 
         <#if events?has_content>
             <#list events as event>
