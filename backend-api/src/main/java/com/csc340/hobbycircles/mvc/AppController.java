@@ -70,6 +70,12 @@ public class AppController {
 
 
 
+    // register chooser: links to the individual and group registration forms
+    @GetMapping("/register")
+    public String register() {
+        return "public/register";
+    }
+
     // register as group
     @GetMapping("/register/group")
     public String showGroupRegistrationForm(Model model) {
