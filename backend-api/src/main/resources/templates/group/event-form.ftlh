@@ -7,13 +7,13 @@
     <div class="row justify-content-center">
         <div class="col-md-9 mt-5">
             <div class="card shadow-sm p-4">
-                <h3 class="mb-4">Create a New Event</h3>
+                <h3 class="mb-4">${heading!"Create a New Event"}</h3>
 
                 <#if error??>
                     <div class="alert alert-danger" role="alert">${error}</div>
                 </#if>
 
-                <form action="/hobbygroups/events" method="post">
+                <form action="${formAction!'/hobbygroups/events'}" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">Event Name *</label>
                         <input type="text" class="form-control" id="name" name="name" maxlength="150"

@@ -32,7 +32,7 @@
                         <div class="detail-item"><span class="detail-label">RSVPs:</span> ${event.rsvpCount}</div>
                     </div>
                     <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <button type="button" class="btn btn-primary">View Details</button>
+                        <a href="/hobbygroups/events/${event.id?c}" class="btn btn-primary">View Details</a>
                         <form action="/hobbygroups/events/${event.id?c}/cancel" method="post"
                             onsubmit="return confirm('Are you sure you want to cancel this event? It will be permanently deleted along with its RSVPs.');">
                             <button type="submit" class="btn btn-outline"
