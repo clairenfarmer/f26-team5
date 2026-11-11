@@ -6,9 +6,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.csc340.hobbycircles.dto.EventRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupResponse;
@@ -85,6 +87,17 @@ public class GroupUiController {
         HobbyGroupResponse group = hobbyGroupService.getProfile(groupId);
         eventService.create(groupId, new EventRequest(
                 cleanName, cleanDescription, group.interest(), cleanLocation, time, "PUBLISHED"));
+        return "redirect:/hobbygroups/dashboard";
+    }
+
+    // cancel (delete) an event; the dashboard asks for confirmation before submitting
+    @PostMapping("/events/{eventId}/cancel")
+    public String cancelEvent(@PathVariable Long eventId, HttpSession session,
+            RedirectAttributes redirectAttributes) {
+        Long groupId = UiSession.requireId(session, "group");
+        String name = eventService.delete(groupId, eventId);
+        // flash attributes survive exactly one redirect, so the pop-up shows only once
+        redirectAttributes.addFlashAttribute("popup", "\"" + name + "\" has been cancelled and deleted.");
         return "redirect:/hobbygroups/dashboard";
     }
 }
