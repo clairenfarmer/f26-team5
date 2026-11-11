@@ -14,7 +14,7 @@
                 <a class="nav-link" href="/individuals/browse-groups">Browse Groups</a>
                 <a class="nav-link" href="/individuals/calendar">View Calendar</a>
                 <a class="nav-link" href="/individuals/dashboard">Dashboard</a>
-                <#elseif userRole?? && userRole=="hobbyGroup">
+                <#elseif userRole?? && userRole=="group">
                 <a class="nav-link" href="/groups/event-form">Create an Event</a>
                 <a class="nav-link" href="/groups/calendar">View Calendar</a>
                 <a class="nav-link" href="/groups/group-profile">View Profile</a>
