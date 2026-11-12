@@ -78,11 +78,16 @@ public class RsvpService {
     }
 
     private RsvpResponse toResponse(RSVP rsvp) {
+        Event event = rsvp.getEvent();
         return new RsvpResponse(
                 rsvp.getId(),
-                rsvp.getEvent().getId(),
-                rsvp.getIndividual().getId(),
-                rsvp.getIndividual().getName()
+            event.getId(),
+            rsvp.getIndividual().getId(),
+            rsvp.getIndividual().getName(),
+            event.getName(), 
+            event.getLocation(),
+            event.getTime().toString(),
+            event.getStatus()
         );
     }
 }
