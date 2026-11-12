@@ -22,7 +22,12 @@
                                     <label for="password" class="form-label">Password</label>
                                     <input id="password" name="password" type="password" required>
                                 </div>
-
+                                <#if error??>
+                                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                                    ${error}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                </#if>
                                 <div>
                                     <button type="submit" class="btn btn-warning"
                                         >Login</button>
