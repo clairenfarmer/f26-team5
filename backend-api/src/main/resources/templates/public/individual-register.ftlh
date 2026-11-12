@@ -6,7 +6,7 @@
                     <div class="col-md-9 mt-5">
                         <div class="card shadow-sm p-4">
                             <h3 class="mb-4">Create Your User Profile</h3>
-                            <form action="/registerIndividual" method="post">
+                            <form action="/register/individual" method="post">
                                 <h4 class="mb-2">User Information</h4>
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name *</label>

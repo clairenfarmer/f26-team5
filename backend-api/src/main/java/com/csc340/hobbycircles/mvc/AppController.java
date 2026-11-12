@@ -68,12 +68,12 @@ public class AppController {
     }
 
     // register as individual 
-    @GetMapping("/registerIndividual")
+    @GetMapping("/register/individual")
     public String registerIndividual() {
-        return "individuals/register";
+        return "public/individual-register";
     }
 
-    @PostMapping("/registerIndividual")
+    @PostMapping("/register/individual")
     public String createIndividual(@Valid IndividualRegistrationRequest request, HttpSession session) {
         IndividualResponse individual = individualService.register(request);
         setSession(session, individual.id(), "individual", individual.name());
