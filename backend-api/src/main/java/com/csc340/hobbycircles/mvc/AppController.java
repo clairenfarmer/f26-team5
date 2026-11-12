@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.csc340.hobbycircles.dto.HobbyGroupRegistrationRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupResponse;
+import com.csc340.hobbycircles.dto.IndividualRegistrationRequest;
 import com.csc340.hobbycircles.dto.IndividualResponse;
 import com.csc340.hobbycircles.entity.Interest;
 import com.csc340.hobbycircles.service.BadRequestException;
@@ -67,9 +68,17 @@ public class AppController {
     }
 
     // register as individual 
+    @GetMapping("/registerIndividual")
+    public String registerIndividual() {
+        return "individuals/register";
+    }
 
-
-
+    @PostMapping("/registerIndividual")
+    public String createIndividual(@Valid IndividualRegistrationRequest request, HttpSession session) {
+        IndividualResponse individual = individualService.register(request);
+        setSession(session, individual.id(), "individual", individual.name());
+        return "redirect:/individuals/dashboard";
+    }
 
     // register chooser: links to the individual and group registration forms
     @GetMapping("/register")

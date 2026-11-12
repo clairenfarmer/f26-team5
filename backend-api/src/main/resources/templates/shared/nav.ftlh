@@ -26,6 +26,34 @@
                 <a class="nav-link" href="/register">Register</a>
                 </#if>
             </div>
+
+            <#if userRole??>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            ${userName!"Account"}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="userDropdown">
+                            
+                            <li><a class="dropdown-item" href="/individuals/edit">Edit Account</a></li>
+                                
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <form action="/logout" method="post"
+                                    class="m-0">
+                                    <button type="submit"
+                                        class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </#if>
         </div>
     </div>
 </nav>
