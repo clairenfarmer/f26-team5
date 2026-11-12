@@ -75,6 +75,16 @@ public class EventService {
         return EventResponse.from(event);
     }
 
+    public String delete(Long hobbyGroupId, Long eventId) {
+        Event event = findEvent(eventId);
+        if (!event.getHobbygroup().getId().equals(hobbyGroupId)) {
+            throw new BadRequestException("Event does not belong to this hobby group.");
+        }
+        String name = event.getName();
+        eventRepository.delete(event);
+        return name;
+    }
+
     Event findEvent(Long eventId) {
         return eventRepository.findById(eventId)
                 .orElseThrow(() -> new NotFoundException("Event " + eventId + " was not found."));

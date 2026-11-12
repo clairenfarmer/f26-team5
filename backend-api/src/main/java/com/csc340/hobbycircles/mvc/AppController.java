@@ -1,14 +1,19 @@
 package com.csc340.hobbycircles.mvc;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.csc340.hobbycircles.dto.HobbyGroupRegistrationRequest;
 import com.csc340.hobbycircles.dto.HobbyGroupResponse;
 import com.csc340.hobbycircles.dto.IndividualRegistrationRequest;
 import com.csc340.hobbycircles.dto.IndividualResponse;
+import com.csc340.hobbycircles.entity.Interest;
 import com.csc340.hobbycircles.service.BadRequestException;
+import com.csc340.hobbycircles.service.ConflictException;
 import com.csc340.hobbycircles.service.HobbyGroupService;
 import com.csc340.hobbycircles.service.IndividualService;
 
@@ -75,11 +80,42 @@ public class AppController {
         return "redirect:/individuals/dashboard";
     }
 
-    //register as group
+    // register chooser: links to the individual and group registration forms
+    @GetMapping("/register")
+    public String register() {
+        return "public/register";
+    }
 
+    // register as group
+    @GetMapping("/register/group")
+    public String showGroupRegistrationForm(Model model) {
+        model.addAttribute("interests", Interest.values());
+        return "public/group-register";
+    }
 
+    @PostMapping("/register/group")
+    public String registerGroup(
+            @Valid @ModelAttribute("form") HobbyGroupRegistrationRequest form,
+            BindingResult bindingResult,
+            Model model,
+            HttpSession session) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("interests", Interest.values());
+            model.addAttribute("error", "Please fix the errors below and try again.");
+            return "public/group-register";
+        }
+        HobbyGroupResponse hobbyGroup;
+        try {
+            hobbyGroup = hobbyGroupService.register(form);
+        } catch (ConflictException | BadRequestException e) {
+            model.addAttribute("interests", Interest.values());
+            model.addAttribute("error", e.getMessage());
+            return "public/group-register";
+        }
+        setSession(session, hobbyGroup.id(), "group", hobbyGroup.name());
+        return "redirect:/hobbygroups/dashboard";
+    }
 
-    
     @PostMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();

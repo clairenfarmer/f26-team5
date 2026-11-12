@@ -11,20 +11,20 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <#if userRole?? && userRole=="individual">
-                    <a class="nav-link" href="/individuals/browse-groups">Browse Groups</a>
-                    <a class="nav-link" href="/individuals/calendar">View Calendar</a>
-                    <a class="nav-link" href="/individuals/dashboard">Dashboard</a>
-                    <#elseif userRole?? && userRole=="hobbyGroup">
-                        <a class="nav-link" href="/groups/event-form">Create an Event</a>
-                        <a class="nav-link" href="/groups/calendar">View Calendar</a>
-                        <a class="nav-link" href="/groups/group-profile">View Profile</a>
-                        <#else>
-                            <#-- Just placeholder for now -->
-                                <a class="nav-link" href="/features">Features</a>
-                                <a class="nav-link" href="/how-it-works">How it Works</a>
-                                <a class="nav-link" href="/login">Login</a>
-                                <a class="nav-link" href="/register">Register</a>
-                </#if>                
+                <a class="nav-link" href="/individuals/browse-groups">Browse Groups</a>
+                <a class="nav-link" href="/individuals/calendar">View Calendar</a>
+                <a class="nav-link" href="/individuals/dashboard">Dashboard</a>
+                <#elseif userRole?? && userRole=="group">
+                <a class="nav-link" href="/hobbygroups/event-form">Create an Event</a>
+                <a class="nav-link" href="/groups/calendar">View Calendar</a>
+                <a class="nav-link" href="/groups/group-profile">View Profile</a>
+                <#else>
+                <#-- Just placeholder for now   -->
+                <a class="nav-link" href="/features">Features</a>
+                <a class="nav-link" href="/how-it-works">How it Works</a>
+                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/register">Register</a>
+                </#if>
             </div>
 
             <#if userRole??>
